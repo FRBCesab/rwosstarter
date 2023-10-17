@@ -1,0 +1,91 @@
+# -----------------------------------------------------------
+# CITATION file created with {cffr} R package, v0.5.0
+# See also: https://docs.ropensci.org/cffr/
+# -----------------------------------------------------------
+ 
+cff-version: 1.2.0
+message: 'To cite package "rwosstarter" in publications use:'
+type: software
+license: GPL-2.0-or-later
+title: 'rwosstarter: An R Client to the Web of Science Starter API'
+version: '0.1'
+abstract: A client to the 'Web of Science Starter API' (<https://developer.clarivate.com/apis/wos-starter>)
+  dedicated to retrieve metadata (including times-cited counts) of scientific publications
+  matching search terms. It can be used to run a literature synthesis. Note that this
+  API requires an API Key access (<https://developer.clarivate.com/>).
+authors:
+- family-names: Casajus
+  given-names: Nicolas
+  email: nicolas.casajus@fondationbiodiversite.fr
+  orcid: https://orcid.org/0000-0002-5537-5294
+preferred-citation:
+  type: manual
+  title: 'rwosstarter: An R client to Web of Science Starter API'
+  authors:
+  - name: Casajus Nicolas
+  year: '2023'
+  notes: R package version 0.1
+  url: https://github.com/frbcesab/rwosstarter
+repository-code: https://github.com/frbcesab/rwosstarter
+url: https://github.com/frbcesab/rwosstarter
+contact:
+- family-names: Casajus
+  given-names: Nicolas
+  email: nicolas.casajus@fondationbiodiversite.fr
+  orcid: https://orcid.org/0000-0002-5537-5294
+references:
+- type: software
+  title: knitr
+  abstract: 'knitr: A General-Purpose Package for Dynamic Report Generation in R'
+  notes: Suggests
+  url: https://yihui.org/knitr/
+  repository: https://CRAN.R-project.org/package=knitr
+  authors:
+  - family-names: Xie
+    given-names: Yihui
+    email: xie@yihui.name
+    orcid: https://orcid.org/0000-0003-0645-5666
+  year: '2023'
+- type: software
+  title: rmarkdown
+  abstract: 'rmarkdown: Dynamic Documents for R'
+  notes: Suggests
+  url: https://pkgs.rstudio.com/rmarkdown/
+  repository: https://CRAN.R-project.org/package=rmarkdown
+  authors:
+  - family-names: Allaire
+    given-names: JJ
+    email: jj@posit.co
+  - family-names: Xie
+    given-names: Yihui
+    email: xie@yihui.name
+    orcid: https://orcid.org/0000-0003-0645-5666
+  - family-names: Dervieux
+    given-names: Christophe
+    email: cderv@posit.co
+    orcid: https://orcid.org/0000-0003-4474-2498
+  - family-names: McPherson
+    given-names: Jonathan
+    email: jonathan@posit.co
+  - family-names: Luraschi
+    given-names: Javier
+  - family-names: Ushey
+    given-names: Kevin
+    email: kevin@posit.co
+  - family-names: Atkins
+    given-names: Aron
+    email: aron@posit.co
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@posit.co
+  - family-names: Cheng
+    given-names: Joe
+    email: joe@posit.co
+  - family-names: Chang
+    given-names: Winston
+    email: winston@posit.co
+  - family-names: Iannone
+    given-names: Richard
+    email: rich@posit.co
+    orcid: https://orcid.org/0000-0003-3925-190X
+  year: '2023'
