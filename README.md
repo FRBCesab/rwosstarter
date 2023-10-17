@@ -3,6 +3,18 @@
 # rwosstarter <img src="man/figures/package-sticker.png" align="right" style="float:right; height:120px;"/>
 
 <!-- badges: start -->
+
+[![R CMD
+Check](https://github.com/frbcesab/rwosstarter/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/frbcesab/rwosstarter/actions/workflows/R-CMD-check.yaml)
+[![Website](https://github.com/frbcesab/rwosstarter/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/frbcesab/rwosstarter/actions/workflows/pkgdown.yaml)
+[![Test
+coverage](https://github.com/frbcesab/rwosstarter/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/frbcesab/rwosstarter/actions/workflows/test-coverage.yaml)
+[![codecov](https://codecov.io/gh/frbcesab/rwosstarter/branch/main/graph/badge.svg)](https://codecov.io/gh/frbcesab/rwosstarter)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/rwosstarter)](https://CRAN.R-project.org/package=rwosstarter)
+[![License: GPL (&gt;=
+2)](https://img.shields.io/badge/License-GPL%20%28%3E%3D%202%29-blue.svg)](https://choosealicense.com/licenses/gpl-2.0/)
+[![Dependencies](https://img.shields.io/badge/dependencies-0/0-brightgreen?style=flat)](#)
 <!-- badges: end -->
 
 The goal of the R package `rwosstarter` is to **{{ PLEASE ADD A FEW
