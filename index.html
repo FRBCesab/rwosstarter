@@ -71,27 +71,40 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>The goal of the R package <code>rwosstarter</code> is to <strong>{{ PLEASE ADD A FEW LINES }}</strong></p>
+<p>The R package <code>rwosstarter</code> is a client to the <a href="https://developer.clarivate.com/apis/wos-starter" class="external-link">Web of Science Starter API</a>. It is dedicated to retrieve metadata (including times-cited counts) of scientific publications matching search terms. It can be used to run a literature synthesis.</p>
+<p><code>rwosstarter</code> is freely released by the <a href="https://www.fondationbiodiversite.fr/en/about-the-foundation/le-cesab/" class="external-link">FRB-CESAB</a>.</p>
+<div class="section level2">
+<h2 id="requirements">Requirements<a class="anchor" aria-label="anchor" href="#requirements"></a>
+</h2>
+<p>The <a href="https://developer.clarivate.com/apis/wos-starter" class="external-link">Web of Science Starter API</a> uses an API Key access. To obtain your own API key, please visit the <a href="https://developer.clarivate.com/" class="external-link">Clarivate Developer Portal</a> and follow instructions.</p>
+<p>Once your access has been granted by Clarivate, you have to store your API key on your computer. A good practice in <a href="https://cran.r-project.org/web/packages/httr/vignettes/secrets.html" class="external-link">managing secrets</a> is to store this API key as an R Environment variable.</p>
+<p>Use the function <code>usethis::edit_r_environ()</code> to open the <code>~/.Renviron</code> file and add this line (replace ‘z999zzz…’ by your actual API key):</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>WOS_STARTER_KEY<span class="ot">=</span><span class="st">'z999zzz9zzz999999z9z99zz999zz999'</span></span></code></pre></div>
+<p>Save this file and restart R.</p>
+</div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <p>You can install the development version from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("remotes")</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"frbcesab/rwosstarter"</span>)</span></code></pre></div>
-<p>Then you can attach the package <code>rwosstarter</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"rwosstarter"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"frbcesab/rwosstarter"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
-<p>Here is an overview of <code>rwosstarter</code> content: <strong>{{ PLEASE ADD A FEW LINES }}</strong></p>
+<p>The general workflow is the following:</p>
+<ul>
+<li>Use the function <code>rwosstarter::wos_search()</code> to get the total number of references that match the Web of Science query.</li>
+<li>Use the function <code>rwosstarter::wos_get_records()</code> to download reference data.</li>
+</ul>
 </div>
 <div class="section level2">
 <h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>
 </h2>
 <p>Please cite this package as:</p>
 <blockquote>
-<p>Casajus Nicolas (2023) rwosstarter: An R package to <strong>{{ TITLE }}</strong>. R package version 0.0.0.9000.</p>
+<p>Casajus N (2023) rwosstarter: An R Client to the WOS Starter API. R package version 0.1. <a href="https://github.com/FRBCesab/rwosstarter" class="external-link uri">https://github.com/FRBCesab/rwosstarter</a></p>
 </blockquote>
 </div>
 <div class="section level2">
@@ -141,9 +154,7 @@
 <li><a href="https://github.com/frbcesab/rwosstarter/actions/workflows/pkgdown.yaml" class="external-link"><img src="https://github.com/frbcesab/rwosstarter/actions/workflows/pkgdown.yaml/badge.svg" alt="Website"></a></li>
 <li><a href="https://github.com/frbcesab/rwosstarter/actions/workflows/test-coverage.yaml" class="external-link"><img src="https://github.com/frbcesab/rwosstarter/actions/workflows/test-coverage.yaml/badge.svg" alt="Test coverage"></a></li>
 <li><a href="https://codecov.io/gh/frbcesab/rwosstarter" class="external-link"><img src="https://codecov.io/gh/frbcesab/rwosstarter/branch/main/graph/badge.svg" alt="codecov"></a></li>
-<li><a href="https://CRAN.R-project.org/package=rwosstarter" class="external-link"><img src="https://www.r-pkg.org/badges/version/rwosstarter" alt="CRAN status"></a></li>
 <li><a href="https://choosealicense.com/licenses/gpl-2.0/" class="external-link"><img src="https://img.shields.io/badge/License-GPL%20%28%3E%3D%202%29-blue.svg" alt="License: GPL (&gt;= 2)"></a></li>
-<li><a href="#"><img src="https://img.shields.io/badge/dependencies-0/0-brightgreen?style=flat" alt="Dependencies"></a></li>
 </ul>
 </div>
 
