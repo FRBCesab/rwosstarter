@@ -89,7 +89,8 @@ that match the Web of Science query.
 Please cite this package as: 
 
 > Casajus N (`r format(Sys.Date(), "%Y")`) rwosstarter: An R Client to
-the WOS Starter API. R package version 0.1. <https://github.com/FRBCesab/rwosstarter>
+the Web of Science Starter API. R package version 0.1.
+<https://github.com/FRBCesab/rwosstarter>
 
 
 

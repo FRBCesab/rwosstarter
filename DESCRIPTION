@@ -1,15 +1,18 @@
 Package: rwosstarter
 Type: Package
-Title: The Title of the Project
-Version: 0.0.0.9000
+Title: An R Client to the Web of Science Starter API
+Version: 0.1
 Authors@R: c(
     person(given   = "Nicolas",
            family  = "Casajus",
            role    = c("aut", "cre", "cph"),
            email   = "nicolas.casajus@fondationbiodiversite.fr",
            comment = c(ORCID = "0000-0002-5537-5294")))
-Description: A paragraph providing a full description of the project (on 
-    several lines...)
+Description: A client to the 'Web of Science Starter API' 
+    (<https://developer.clarivate.com/apis/wos-starter>) dedicated to retrieve 
+    metadata (including times-cited counts) of scientific publications matching 
+    search terms. It can be used to run a literature synthesis. Note that this 
+    API requires an API Key access (<https://developer.clarivate.com/>).
 URL: https://github.com/frbcesab/rwosstarter
 BugReports: https://github.com/frbcesab/rwosstarter/issues
 License: GPL (>= 2)

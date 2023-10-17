@@ -4,9 +4,9 @@
 \name{rwosstarter-package}
 \alias{rwosstarter}
 \alias{rwosstarter-package}
-\title{rwosstarter: The Title of the Project}
+\title{rwosstarter: An R Client to the Web of Science Starter API}
 \description{
-A paragraph providing a full description of the project (on several lines...)
+A client to the 'Web of Science Starter API' (\url{https://developer.clarivate.com/apis/wos-starter}) dedicated to retrieve metadata (including times-cited counts) of scientific publications matching search terms. It can be used to run a literature synthesis. Note that this API requires an API Key access (\url{https://developer.clarivate.com/}).
 }
 \seealso{
 Useful links:

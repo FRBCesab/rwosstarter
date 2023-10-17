@@ -2,9 +2,9 @@ citHeader("To cite rwosstarter in publications use:")
 
 bibentry(
   bibtype = "Manual",
-  title   = "rwosstarter: {An} {R} package to ...",
+  title   = "rwosstarter: {An} {R} client to {W}eb of {S}cience {S}tarter {API}",
   author  = c(person("Casajus Nicolas")),
   year    = "2023",
-  note    = "R package version 0.0.0.9000",
+  note    = "R package version 0.1",
   url     = "https://github.com/frbcesab/rwosstarter"
 )

@@ -64,8 +64,9 @@ The general workflow is the following:
 
 Please cite this package as:
 
-> Casajus N (2023) rwosstarter: An R Client to the WOS Starter API. R
-> package version 0.1. <https://github.com/FRBCesab/rwosstarter>
+> Casajus N (2023) rwosstarter: An R Client to the Web of Science
+> Starter API. R package version 0.1.
+> <https://github.com/FRBCesab/rwosstarter>
 
 ## Code of Conduct
 
