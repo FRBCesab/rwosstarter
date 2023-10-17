@@ -12,6 +12,20 @@ Check](https://github.com/frbcesab/rwosstarter/actions/workflows/R-CMD-check.yam
 2)](https://img.shields.io/badge/License-GPL%20%28%3E%3D%202%29-blue.svg)](https://choosealicense.com/licenses/gpl-2.0/)
 <!-- badges: end -->
 
+## Table of contents
+
+<p align="left">
+• <a href="#overview">Overview</a><br> •
+<a href="#requirements">Requirements</a><br> •
+<a href="#installation">Installation</a><br> •
+<a href="#get-started">Get started</a><br> •
+<a href="#citation">Citation</a><br> •
+<a href="#contributing">Contributing</a><br> •
+<a href="#acknowledgments">Acknowledgments</a>
+</p>
+
+## Overview
+
 The R package `rwosstarter` is a client to the [Web of Science Starter
 API](https://developer.clarivate.com/apis/wos-starter). It is dedicated
 to retrieve metadata (including times-cited counts) of scientific
@@ -51,7 +65,7 @@ You can install the development version from
 remotes::install_github("frbcesab/rwosstarter")
 ```
 
-## Overview
+## Get started
 
 The general workflow is the following:
 
@@ -68,9 +82,18 @@ Please cite this package as:
 > Starter API. R package version 0.1.
 > <https://github.com/FRBCesab/rwosstarter>
 
-## Code of Conduct
+## Contributing
+
+All types of contributions are encouraged and valued. For more
+information, check out our [Contributor
+Guidelines](https://github.com/FRBCesab/rwosstarter/blob/main/CONTRIBUTING.md).
 
 Please note that the `rwosstarter` project is released with a
 [Contributor Code of
-Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/).
+Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html).
 By contributing to this project, you agree to abide by its terms.
+
+## Acknowledgments
+
+The author of this project would like to thank Clarivate for giving
+access to the Starter API.
