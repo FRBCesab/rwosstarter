@@ -23,7 +23,3 @@ Imports:
     httr,
     jsonlite,
     utils
-Suggests: 
-    knitr,
-    rmarkdown
-VignetteBuilder: knitr
