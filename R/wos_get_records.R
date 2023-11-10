@@ -112,7 +112,7 @@ wos_get_records <- function(query, database = "WOS", limit = NULL, sleep = 1) {
     }
   }
   
-  pages <- seq(1, n_refs, by = n_records_per_page)
+  pages <- seq(1, ceiling(n_refs / n_records_per_page), by = 1)
   
   
   for (page in pages) {
@@ -147,44 +147,74 @@ wos_get_records <- function(query, database = "WOS", limit = NULL, sleep = 1) {
     
     ## Convert listed df to df ----
     
-    data <- data.frame(
-      "uid"                = content$"uid",
-      "document_type"      = list_to_df(content$"sourceTypes"),
-      "title"              = list_to_df(content$"title"),
-      "authors"            = unlist(lapply(content$"names"$"authors", 
-                                           function(x) {
-                                             if (is.null(x)) {
-                                               NA
-                                             } else {
-                                               paste0(x[ , 1], collapse = " | ")  
-                                             }})),
-      "published_year"     = list_to_df(content$"source"$"publishYear"),
-      "published_month"    = list_to_df(content$"source"$"publishMonth"),
-      "source"             = list_to_df(content$"source"$"sourceTitle"),
-      "volume"             = list_to_df(content$"source"$"volume"),
-      "issue"              = list_to_df(content$"source"$"issue"),
-      "pages"              = list_to_df(content$"source"$"pages"$"range"),
-      "no_article"         = list_to_df(content$"source"$"articleNumber"),
-      "supplement_number"  = list_to_df(content$"source"$"supplement"),
-      "special_issue"      = list_to_df(content$"source"$"specialIssue"),
-      "book_editors"       = unlist(lapply(content$"names"$"bookEditors", 
-                                           function(x) {
-                                             if (is.null(x)) {
-                                               NA
-                                             } else {
-                                               paste0(x[ , 1], collapse = " | ")  
-                                             }})),
-      "keywords"           = list_to_df(content$"keywords"$"authorKeywords"),
-      "doi"                = content$"identifiers"$"doi",
-      "eissn"              = content$"identifiers"$"eissn",
-      "issn"               = content$"identifiers"$"issn",
-      "isbn"               = content$"identifiers"$"isbn",
-      "pmid"               = content$"identifiers"$"pmid",
-      "citations"          = unlist(lapply(content$"citations", 
-                                           function(x) {
-                                             ifelse(is.null(x$"count"), NA, 
-                                                    x$"count")
-                                             })))
+    uid           <- list_to_df(get_field(content, 
+                                          "uid"))
+    document_type <- list_to_df(get_field(content, 
+                                          "sourceTypes"))
+    title         <- list_to_df(get_field(content, 
+                                          "title"))
+    
+    authors       <- unlist(lapply(get_field(content$"names", 
+                                             "authors"), 
+                                   function(x) {
+                                     if (!is.data.frame(x)) {
+                                       NA
+                                     } else {
+                                       paste0(x[ , 1], collapse = " | ")  
+                                     }}))
+    
+    published_year     <- list_to_df(get_field(content$"source", 
+                                               "publishYear"))
+    published_month    <- list_to_df(get_field(content$"source", 
+                                               "publishMonth"))
+    source             <- list_to_df(get_field(content$"source", 
+                                               "sourceTitle"))
+    volume             <- list_to_df(get_field(content$"source", 
+                                               "volume"))
+    issue              <- list_to_df(get_field(content$"source", 
+                                               "issue"))
+    pages              <- list_to_df(get_field(content$"source"$"pages", 
+                                               "range"))
+    no_article         <- list_to_df(get_field(content$"source", 
+                                               "articleNumber"))
+    supplement_number  <- list_to_df(get_field(content$"source", 
+                                               "supplement"))
+    special_issue      <- list_to_df(get_field(content$"source", 
+                                               "specialIssue"))
+    
+    book_editors       <- unlist(lapply(get_field(content$"names", 
+                                                  "bookEditors"), 
+                                        function(x) {
+                                         if (!is.data.frame(x)) {
+                                           NA
+                                         } else {
+                                           paste0(x[ , 1], collapse = " | ")  
+                                         }}))
+    
+    keywords           <- list_to_df(get_field(content$"keywords", 
+                                               "authorKeywords"))
+    doi                <- list_to_df(get_field(content$"identifiers",
+                                               "doi"))
+    eissn              <- list_to_df(get_field(content$"identifiers", 
+                                               "eissn"))
+    issn               <- list_to_df(get_field(content$"identifiers", 
+                                               "issn"))
+    isbn               <- list_to_df(get_field(content$"identifiers", 
+                                               "isbn"))
+    pmid               <- list_to_df(get_field(content$"identifiers", 
+                                               "pmid"))
+    
+    citations          <- unlist(lapply(get_field(content, "citations"), 
+                                         function(x) {
+                                           ifelse(is.na(x$"count"), NA, 
+                                                  x$"count")
+                                         }))
+    
+    data <- data.frame(uid, document_type, title, authors, published_year,
+                       published_month, source, volume, issue, pages, 
+                       no_article, supplement_number, special_issue, 
+                       book_editors, keywords, doi, eissn, issn, isbn, pmid,
+                       citations)
     
     refs <- rbind(refs, data)
     

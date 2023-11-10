@@ -9,3 +9,12 @@ list_to_df <- function(x) {
     x
   }
 }
+
+get_field <- function(data, field) {
+  
+  if (!(field %in% colnames(data))) {
+    return(rep(NA, nrow(data)))
+  } else {
+    data[ , field]
+  }
+}
