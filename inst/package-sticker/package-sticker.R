@@ -13,10 +13,10 @@ hexSticker::sticker(
   u_size   = 12.0,        # URL
   p_family = "Aller_Rg",
   
-  p_color  = "#0D1117",   # Title
+  p_color  = "#f2f2f2",   # Title
   h_fill   = "#002B36",   # Background
   h_color  = "#0D1117",   # Border
-  u_color  = "#0D1117",   # URL
+  u_color  = "#f2f2f2",   # URL
   
   p_x      = 1.00,        # Title
   p_y      = 0.60,        # Title
